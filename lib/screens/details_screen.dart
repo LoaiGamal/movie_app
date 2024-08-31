@@ -61,7 +61,6 @@ class _DetailsState extends State<DetailsScreen> {
         _movieDetails = MovieDetails.fromJson(jsonDecode(response.body));
         _isLoading = false;
       });
-      print(_movieDetails);
     } else {
       throw Exception('No Movie Found');
     }
@@ -80,51 +79,73 @@ class _DetailsState extends State<DetailsScreen> {
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : Container(
-              padding: const EdgeInsets.all(8),
-              child: SafeArea(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      movieCover(
+          : CustomScrollView(slivers: [
+              SliverAppBar(
+                pinned: true,
+                leading: GestureDetector(
+                  onTap: (){ Navigator.pop(context);},
+                  child: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                ),
+                flexibleSpace: LayoutBuilder(builder: (context, constraints) {
+                  return FlexibleSpaceBar(
+                    background: SafeArea(
+                      child: movieCover(
                           'https://image.tmdb.org/t/p/w500${_movieDetails.backdropPath}'),
-                      const SizedBox(height: 8),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 8),
-                          Expanded(
-                            child: movieTitle(context, _movieDetails.title!),
-                          ),
-                          rating(context,
-                              _movieDetails.voteAverage!.toStringAsFixed(1)),
-                        ],
-                      ),
-                      const SizedBox(height: 15.0),
-                      overview(context),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 12),
-                        child: movieOverview(
-                          context,
-                          _movieDetails.overview!,
+                    ),
+                  );
+                }),
+                expandedHeight: 250,
+              ),
+              SliverToBoxAdapter(
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: SafeArea(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const SizedBox(height: 8),
+                            Expanded(
+                              child:
+                                  movieTitle(context, _movieDetails.title!),
+                            ),
+                            rating(
+                                context,
+                                _movieDetails.voteAverage!
+                                    .toStringAsFixed(1)),
+                          ],
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      const Divider(color: Color.fromARGB(90, 255, 255, 255)),
-                      movieLanguageDetails(context,
-                          ' ${_movieDetails.originalLanguage!.toUpperCase()}'),
-                      movieDateRelease(
-                          context, ' ${_movieDetails.releaseDate!}'),
-                      // suggestedMovieList(dummyData),
-                    ],
+                        const SizedBox(height: 15.0),
+                        overview(context),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 12),
+                          child: movieOverview(
+                            context,
+                            _movieDetails.overview!,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        const Divider(
+                            color: Color.fromARGB(90, 255, 255, 255)),
+                        movieLanguageDetails(context,
+                            ' ${_movieDetails.originalLanguage!.toUpperCase()}'),
+                        movieDateRelease(
+                            context, ' ${_movieDetails.releaseDate!}'),
+                        // suggestedMovieList(dummyData),
+                        const SizedBox(height: 500)
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
+            ]),
     );
   }
 
