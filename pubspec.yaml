@@ -85,29 +85,29 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Janna
-      fonts:
-        - asset: fonts/JannaLT-Bold.ttf
-        - asset: JannaLT-Regular.ttf
-          style: normal
-    - family: Lota
-      fonts:
-        - asset: assets/fonts/LotaGrotesque-Black.otf
-        - asset: assets/fonts/LotaGrotesque-BlackIt.otf
-        - asset: assets/fonts/LotaGrotesque-Bold.otf
-        - asset: assets/fonts/LotaGrotesque-BoldIt.otf
-        - asset: assets/fonts/LotaGrotesque-ExtraLight.otf
-        - asset: assets/fonts/LotaGrotesque-ExtraLightIt.otf
-        - asset: assets/fonts/LotaGrotesque-Light.otf
-        - asset: assets/fonts/LotaGrotesque-LightIt.otf
-        - asset: assets/fonts/LotaGrotesque-Regular.otf
-        - asset: assets/fonts/LotaGrotesque-RegularIt.otf
-        - asset: assets/fonts/LotaGrotesque-SemiBold.otf
-        - asset: assets/fonts/LotaGrotesque-SemiBoldIt.otf
-        - asset: assets/fonts/LotaGrotesque-Thin.otf
-        - asset: assets/fonts/LotaGrotesque-ThinIt.otf
-        - asset: assets/fonts/LotaGrotesque-BlackIt.otf
+#  fonts:
+#    - family: Janna
+#      fonts:
+#        - asset: fonts/JannaLT-Bold.ttf
+#        - asset: JannaLT-Regular.ttf
+#          style: normal
+#    - family: Lota
+#      fonts:
+#        - asset: assets/fonts/LotaGrotesque-Black.otf
+#        - asset: assets/fonts/LotaGrotesque-BlackIt.otf
+#        - asset: assets/fonts/LotaGrotesque-Bold.otf
+#        - asset: assets/fonts/LotaGrotesque-BoldIt.otf
+#        - asset: assets/fonts/LotaGrotesque-ExtraLight.otf
+#        - asset: assets/fonts/LotaGrotesque-ExtraLightIt.otf
+#        - asset: assets/fonts/LotaGrotesque-Light.otf
+#        - asset: assets/fonts/LotaGrotesque-LightIt.otf
+#        - asset: assets/fonts/LotaGrotesque-Regular.otf
+#        - asset: assets/fonts/LotaGrotesque-RegularIt.otf
+#        - asset: assets/fonts/LotaGrotesque-SemiBold.otf
+#        - asset: assets/fonts/LotaGrotesque-SemiBoldIt.otf
+#        - asset: assets/fonts/LotaGrotesque-Thin.otf
+#        - asset: assets/fonts/LotaGrotesque-ThinIt.otf
+#        - asset: assets/fonts/LotaGrotesque-BlackIt.otf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

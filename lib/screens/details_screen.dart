@@ -22,33 +22,7 @@ class _DetailsState extends State<DetailsScreen> {
   bool _isLoading = true;
   final _apiUrl = 'https://api.themoviedb.org/3/movie';
   final _apiKey = '15e055caa208cab4ce3a30c8d5ac4a1a';
-  MovieDetails _movieDetails = MovieDetails(
-      false,
-      {},
-      0,
-      [],
-      'homepage',
-      0,
-      'imdbId',
-      [],
-      'originalTitle',
-      0,
-      'posterPath',
-      [],
-      [],
-      0,
-      0,
-      [],
-      'status',
-      'tagline',
-      false,
-      0,
-      backdropPath: 'backdropPath',
-      originalLanguage: 'originalLanguage',
-      overview: 'overview',
-      releaseDate: 'releaseDate',
-      title: 'title',
-      voteAverage: 0);
+  late MovieDetails _movieDetails;
 
   void getMovieByID() async {
     setState(() {
